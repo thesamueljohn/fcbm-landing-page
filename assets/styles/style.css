@@ -1,0 +1,118 @@
+html{
+  scroll-behavior: auto !important;
+}
+body {
+  font-family: "Inter", sans-serif;
+}
+.font-instrument-serif {
+  font-family: "Instrument Serif", serif;
+}
+/* Custom smooth scrolling and hidden scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+/* Animation Utilities */
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Marquee Animation */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.marquee-container-text {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 150s linear infinite;
+}
+/* Cursor styles */
+.cursor-grab {
+  cursor: grab;
+}
+.cursor-grabbing {
+  cursor: grabbing;
+}
+/* Glass utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+/* Image transition for the process section */
+.process-img {
+  transition:
+    opacity 0.5s ease-in-out,
+    transform 0.7s cubic-bezier(0.2, 0, 0.2, 1);
+}
+.process-img.active {
+  opacity: 1;
+  transform: scale(1);
+}
+.process-img.inactive {
+  opacity: 0;
+  transform: scale(1.05);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+/* Hero Changing Texts/Phrases */
+  /* The "In" Animation: 
+     Start: Transparent, blurred, slightly scaled up (1.1x), and slightly lower (translate-y).
+     End: Visible, sharp, normal scale, and original position.
+  */
+  @keyframes cinematic-in {
+    0% {
+      opacity: 0;
+      filter: blur(12px);
+      transform: scale(1.15) translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      filter: blur(0px);
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  /* The "Out" Animation:
+     Reverse the logic but faster. We scale down slightly to suggest recession.
+  */
+  @keyframes cinematic-out {
+    0% {
+      opacity: 1;
+      filter: blur(0px);
+      transform: scale(1) translateY(0);
+    }
+    100% {
+      opacity: 0;
+      filter: blur(8px);
+      transform: scale(0.95) translateY(-5px);
+    }
+  }
+
+  /* Utility classes to apply the animations */
+  .animate-cinematic-in {
+    animation: cinematic-in 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  .animate-cinematic-out {
+    animation: cinematic-out 0.6s cubic-bezier(0.7, 0, 0.84, 0) forwards;
+  }

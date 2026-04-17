@@ -1,0 +1,1040 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FCBM - Fullstature College of the Bible and Missions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+
+    <!-- Local Plugins -->
+    <!-- TW -->
+    <script src="./assets/scripts/plugins/tailwindcss.js"></script>
+    <script src="./assets/scripts/plugins/gsap.min.js"></script>
+    <script src="./assets/scripts/plugins/ScrollTrigger.min.js"></script>
+    <script src="./assets/scripts/plugins/lenis.min.js"></script>
+    <script src="./assets/scripts/plugins/"></script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <!-- <link
+      id="all-fonts-link-font-instrument-serif"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400&amp;display=swap"
+    /> -->
+  </head>
+  <body
+    class="bg-zinc-50 g-zinc-950 text-zinc-900 ext-zinc-100 antialiased selection:bg-emerald-500/30 selection:text-emerald-200 relative overflow-x-hidden"
+  >
+    <!-- New Dual-Tier Header -->
+    <header class="fixed top-0 left-0 w-full z-50">
+      <!-- Top Utility Bar -->
+      <div
+        class="w-full bg-white g-zinc-950 border-b border-zinc-200 order-zinc-800 h-12 px-6 md:px-12 flex items-center justify-end gap-6 text-xs font-medium text-zinc-600 ext-zinc-400 relative z-50 transition-colors duration-300"
+      >
+        <!-- Mobile Menu Toggle (Visible only on small screens) -->
+        <button class="md:hidden absolute left-6 text-zinc-400">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-menu"
+          >
+            <line x1="4" x2="20" y1="12" y2="12"></line>
+            <line x1="4" x2="20" y1="6" y2="6"></line>
+            <line x1="4" x2="20" y1="18" y2="18"></line>
+          </svg>
+        </button>
+
+        <!-- Search Area -->
+        <!-- <div class="relative group hidden sm:block">
+          <input
+            type="text"
+            placeholder="Search courses..."
+            class="bg-zinc-100 g-zinc-900 border border-zinc-200 order-zinc-800 hover:border-zinc-300 over:border-zinc-700 focus:border-zinc-400 ocus:border-zinc-600 rounded-md px-3 py-1.5 pl-9 text-zinc-800 ext-zinc-200 placeholder-zinc-500 laceholder-zinc-600 focus:outline-none focus:ring-1 focus:ring-zinc-400 ocus:ring-zinc-600 w-56 transition-all duration-200"
+          />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-search absolute left-3 top-1/2 -translate-y-1/2 text-zinc-600 group-hover:text-zinc-500 transition-colors"
+          >
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </svg>
+        </div> -->
+
+        <!-- Auth Navigation -->
+        <div
+          class="flex items-center gap-5 border-l border-zinc-200 order-zinc-800 pl-5 h-6"
+        >
+          <a
+            href="#"
+            class="hover:text-black over:text-white transition-colors"
+            >Student Portal</a
+          >
+          <a
+            href="#"
+            class="px-4 py-1.5 border border-zinc-200 rounded-md bg-red-800 text-white hover:bg-red-900 transition-all duration-200"
+            >Apply Now</a
+          >
+
+          <!-- Theme Toggle -->
+          <!-- <button
+            id="theme-toggle"
+            class="ml-2 p-1.5 rounded-full hover:bg-zinc-100 over:bg-zinc-800 text-zinc-600 ext-zinc-400 transition-colors"
+            aria-label="Toggle theme"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="hidden lock"
+            >
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2"></path>
+              <path d="M12 20v2"></path>
+              <path d="m4.93 4.93 1.41 1.41"></path>
+              <path d="m17.66 17.66 1.41 1.41"></path>
+              <path d="M2 12h2"></path>
+              <path d="M20 12h2"></path>
+              <path d="m6.34 17.66-1.41-1.41"></path>
+              <path d="m19.07 4.93-1.41 1.41"></path>
+            </svg>
+           
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="block idden"
+            >
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+            </svg>
+          </button> -->
+        </div>
+      </div>
+
+      <!-- Main Navigation Overlay -->
+      <nav
+        class="w-full px-6 py-4 md:px-12 md:py-6 flex justify-between items-center text-white transition-all duration-300 bg-gradient-to-b from-black/80 to-transparent backdrop-blur-[2px]"
+      >
+        <a
+          href="#"
+          class="group flex items-end text-2xl md:text-3xl tracking-tight font-normal pointer-events-auto font-instrument-serif"
+        >
+          <img src="./assets/images/logo.png" width="40px" alt="Logo" />
+          <span
+            class="mix-blend-difference border-b border-white pb-0.5 group-hover:border-transparent transition-colors duration-300"
+          >
+            FCBM</span
+          >
+        </a>
+
+        <!-- Desktop Menu -->
+        <div
+          class="hidden md:flex items-center gap-8 lg:gap-12 pointer-events-auto"
+        >
+          <a
+            href="#"
+            class="text-sm font-medium uppercase tracking-wide hover:text-zinc-300 transition-colors mix-blend-difference"
+            >About</a
+          >
+          <a
+            href="#"
+            class="text-sm font-medium uppercase tracking-wide hover:text-zinc-300 transition-colors mix-blend-difference"
+            >Admissions</a
+          >
+          <a
+            href="#"
+            class="text-sm font-medium uppercase tracking-wide hover:text-zinc-300 transition-colors mix-blend-difference"
+            >Contact</a
+          >
+          <a
+            href="#contact"
+            class="px-5 py-2 rounded-full border border-white/20 hover:bg-white hover:text-black transition-all duration-300 text-sm font-medium uppercase tracking-wide backdrop-blur-md bg-white/5"
+            >Check our courses</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <header class="relative w-full h-screen overflow-hidden bg-black">
+      <video
+        autoplay=""
+        muted=""
+        loop=""
+        playsinline=""
+        class="absolute inset-0 w-full h-full object-cover opacity-60 scale-105"
+        poster="./assets/images/16.jpg"
+      >
+        <source src="./assets/videos/hero-bg.mp4" type="video/mp4" />
+      </video>
+
+      <div
+        class="bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent absolute top-0 right-0 bottom-0 left-0"
+      ></div>
+
+      <div
+        class="absolute bottom-0 left-0 w-full px-6 py-12 md:px-12 md:py-20 flex flex-col md:flex-row justify-between items-end"
+      >
+        <div class="max-w-5xl fade-in-up">
+          <h1
+            class="text-white text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight font-instrument-serif mb-8"
+          >
+            Want to learn more about
+            <span
+              id="text-target"
+              class="text-[#dcd516] inline-block origin-left will-change-transform opacity-0 translate-y-2 blur-md"
+            >
+              theology and God?
+            </span>
+          </h1>
+
+          <div
+            class="flex flex-col md:flex-row gap-6 md:items-center text-lg font-light text-zinc-300"
+          >
+            <p
+              class="max-w-md leading-relaxed text-zinc-400 text-base md:text-lg"
+            >
+              Equipping you for the harvest. Admissions are open for the
+              September-October session.
+            </p>
+            <a
+              href="#process"
+              class="group flex items-center gap-2 text-white border-b border-white/30 pb-1 hover:border-white transition-all w-fit"
+            >
+              <span class="text-[#dcd516]">Check our courses</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#dcd516"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                data-lucide="arrow-down-right"
+                class="lucide lucide-arrow-down-right w-4 h-4 group-hover:translate-x-1 transition-transform"
+              >
+                <path d="m7 7 10 10"></path>
+                <path d="M17 7v10H7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Strategies & Interactive Scrollable Cards -->
+    <section
+      class="overflow-hidden z-10 bg-white g-zinc-950 border-zinc-200 order-zinc-900/50 border-b pt-24 pb-24 relative"
+    >
+      <div class="px-6 md:px-12 mb-16 md:mb-24">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
+          <h2
+            class="text-4xl md:text-6xl lg:text-7xl leading-[0.95] tracking-tight font-instrument-serif text-zinc-900"
+          >
+            Training For <br /><span class="text-zinc-600">The Harvest</span>
+          </h2>
+          <div class="lg:pl-12">
+            <p
+              class="text-lg md:text-xl font-light text-zinc-600 leading-relaxed"
+            >
+              Whether you are called to ministry or seeking deeper knowledge of
+              the Word, we build spiritual foundations that last.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Enhanced Draggable Container -->
+      <div
+        id="marquee-container"
+        class="flex w-full overflow-hidden select-none active:cursor-grabbing touch-pan-y"
+     
+      >
+        <div
+          id="marquee-track"
+          class="flex gap-6 md:gap-8 min-w-max px-4 md:px-8 items-stretch will-change-transform"
+        >
+          <!-- Card 1 -->
+          <div
+            class="group relative w-[85vw] md:w-[500px] h-[600px] rounded-[2rem] overflow-hidden border border-zinc-200 order-zinc-800 bg-zinc-100 g-zinc-900/40 hover:border-zinc-300 over:border-zinc-600 transition-colors duration-500 shrink-0"
+          >
+            <div class="absolute inset-0 w-full h-full">
+              <img
+                src="./assets/images/courses/pastoral.jpg"
+                class="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700 ease-out"
+                draggable="false"
+                alt="Ad Creatives"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-b from-transparent via-zinc-950/20 to-zinc-950"
+              ></div>
+            </div>
+            <div
+              class="md:p-10 flex flex-col pt-8 pr-8 pb-8 pl-8 absolute top-0 right-0 bottom-0 left-0 justify-between"
+            >
+              <div class="flex justify-between items-start">
+                <span
+                  class="font-instrument-serif text-5xl md:text-6xl text-white/90"
+                  >01</span
+                >
+                <div
+                  class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center duration-500 border border-white/20"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    data-lucide="arrow-up-right"
+                    class="lucide lucide-arrow-up-right w-5 h-5 text-white"
+                  >
+                    <path d="M7 7h10v10"></path>
+                    <path d="M7 17 17 7"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="">
+                <h3
+                  class="md:text-4xl group-hover:translate-y-0 transition-transform duration-500 text-3xl text-white tracking-tight font-instrument-serif mb-3 translate-y-2"
+                >
+                  Biblical Theology
+                </h3>
+                <div class="">
+                  <p
+                    class="text-white text-sm leading-relaxed max-w-[90%] pt-2 duration-700 delay-100"
+                  >
+                    A deep dive into the scriptures to understand the
+                    foundations of faith and doctrine for effective ministry.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="group relative w-[85vw] md:w-[500px] h-[600px] rounded-[2rem] overflow-hidden border border-zinc-200 order-zinc-800 bg-zinc-100 g-zinc-900/40 hover:border-zinc-300 over:border-zinc-600 transition-colors duration-500 shrink-0"
+          >
+            <div class="absolute inset-0 w-full h-full">
+              <img
+                src="./assets/images/courses/pastoral.jpg"
+                class="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700 ease-out"
+                draggable="false"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-b from-transparent via-zinc-950/20 to-zinc-950"
+              ></div>
+            </div>
+            <div
+              class="absolute inset-0 p-8 md:p-10 flex flex-col justify-between"
+            >
+              <div class="flex justify-between items-start">
+                <span
+                  class="font-instrument-serif text-5xl md:text-6xl text-white/90"
+                  >02</span
+                >
+                <div
+                  class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center duration-500 border border-white/20"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    data-lucide="arrow-up-right"
+                    class="lucide lucide-arrow-up-right w-5 h-5 text-white"
+                  >
+                    <path d="M7 7h10v10"></path>
+                    <path d="M7 17 17 7"></path>
+                  </svg>
+                </div>
+              </div>
+              <div>
+                <h3
+                  class="text-3xl md:text-4xl font-instrument-serif tracking-tight text-white mb-3 translate-y-2 group-hover:translate-y-0 transition-transform duration-500"
+                >
+                  Missions Training
+                </h3>
+                <div class="">
+                  <p
+                    class="text-white text-sm leading-relaxed max-w-[90%] pt-2 duration-700 delay-100"
+                  >
+                    Preparing you to reach the unreached with practical
+                    strategies and spiritual equipping for the field.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="group relative w-[85vw] md:w-[500px] h-[600px] rounded-[2rem] overflow-hidden border border-zinc-200 order-zinc-800 bg-zinc-100 g-zinc-900/40 hover:border-zinc-300 over:border-zinc-600 transition-colors duration-500 shrink-0"
+          >
+            <div class="absolute inset-0 w-full h-full">
+              <img
+                src="./assets/images/courses/pastoral.jpg"
+                class="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700 ease-out"
+                draggable="false"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-b from-transparent via-zinc-950/20 to-zinc-950"
+              ></div>
+            </div>
+            <div
+              class="absolute inset-0 p-8 md:p-10 flex flex-col justify-between"
+            >
+              <div class="flex justify-between items-start">
+                <span
+                  class="font-instrument-serif text-5xl md:text-6xl text-white/90"
+                  >03</span
+                >
+                <div
+                  class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center duration-500 border border-white/20"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    data-lucide="arrow-up-right"
+                    class="lucide lucide-arrow-up-right w-5 h-5 text-white"
+                  >
+                    <path d="M7 7h10v10"></path>
+                    <path d="M7 17 17 7"></path>
+                  </svg>
+                </div>
+              </div>
+              <div>
+                <h3
+                  class="text-3xl md:text-4xl font-instrument-serif tracking-tight text-white mb-3 translate-y-2 group-hover:translate-y-0 transition-transform duration-500"
+                >
+                  Pastoral Care
+                </h3>
+                <div class="">
+                  <p
+                    class="text-white text-sm leading-relaxed max-w-[90%] pt-2 duration-700 delay-100"
+                  >
+                    Developing leaders who can shepherd God's flock with wisdom,
+                    integrity, and a servant's heart.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION: Split Layout with Sticky Image -->
+    <section
+      class="relative bg-white g-zinc-950 border-b border-zinc-200 order-zinc-900/50"
+      id="about"
+    >
+      <div
+        class="max-w-[1600px] py-12 px-6 md:px-12 lg:p-16 mx-auto"
+      >
+        <div
+          class="reveal-container font-medium text-2xl lg:text-4xl text-white mix-blend-difference flex flex-col gap-12"
+        >
+          <div class="flex flex-col">
+            <div class="overflow-hidden">
+              <div class="reveal-text">
+                Fullstature College of the Bible and Missions (FCBM)
+              </div>
+            </div>
+            <div class="overflow-hidden">
+              <div class="reveal-text">
+                is a premier theological institution dedicated
+              </div>
+            </div>
+            <div class="overflow-hidden">
+              <div class="reveal-text">
+                to the intellectual and spiritual formation of believers.
+              </div>
+            </div>
+            <div class="overflow-hidden">
+              <div class="reveal-text">
+                <span class="underline decoration-yellow-500/50"
+                  >Established in 1990,</span
+                >
+                we have spent over
+              </div>
+            </div>
+            <div class="overflow-hidden">
+              <div class="reveal-text">
+                three decades bridging the gap between deep
+              </div>
+            </div>
+            <div class="overflow-hidden">
+              <div class="reveal-text">
+                biblical scholarship and practical, Spirit-led ministry.
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col">
+            <div class="overflow-hidden">
+              <div class="reveal-text">
+                We are more than a school; we are a global training ground.
+              </div>
+            </div>
+            <div class="overflow-hidden">
+              <div class="reveal-text">
+                Our mandate is rooted in the conviction that every
+              </div>
+            </div>
+            <div class="overflow-hidden">
+              <div class="reveal-text">
+                believer is called to the "measure of the stature
+              </div>
+            </div>
+            <div class="overflow-hidden">
+              <div class="reveal-text">
+                of the fullness of Christ" (Ephesians 4:13).
+              </div>
+            </div>
+            <div class="overflow-hidden">
+              <div class="reveal-text">
+                Whether you are called to the pulpit, the marketplace,
+              </div>
+            </div>
+            <div class="overflow-hidden">
+              <div class="reveal-text">
+                or the mission field, FCBM provides the doctrinal
+              </div>
+            </div>
+            <div class="overflow-hidden">
+              <div class="reveal-text">
+                foundation and spiritual fire you need to fulfill your destiny.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- PROCESS SECTION: Split Layout with Sticky Image -->
+    <section
+      class="relative bg-white g-zinc-950 border-b border-zinc-200 order-zinc-900/50"
+      id="process"
+    >
+      <div class="max-w-[1600px] mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+          <!-- Left Column: Sticky Image Wrapper -->
+          <div
+            class="hidden lg:block relative h-full min-h-screen border-r border-zinc-200 order-zinc-900/50"
+          >
+            <div
+              class="sticky top-0 h-screen w-full flex items-center justify-center p-12 lg:p-16"
+            >
+              <div
+                class="relative w-full h-[85vh] max-h-[800px] flex items-start"
+              >
+                <!-- Dynamic Image Container -->
+                <div class="relative w-3/4 h-full overflow-hidden">
+                  <!-- Image 1 -->
+                  <img
+                    id="process-img-1"
+                    src="./assets/images/2.jpg"
+                    class="process-img w-full h-full object-cover grayscale opacity-90"
+                    alt="Process Step 1"
+                  />
+
+                  <!-- Image 2 -->
+                  <img
+                    id="process-img-2"
+                    src="./assets/images/11.jpg"
+                    class="process-img w-full h-full object-cover grayscale opacity-90"
+                    alt="Process Step 2"
+                  />
+
+                  <!-- Image 3 -->
+                  <img
+                    id="process-img-3"
+                    src="./assets/images/15.jpg"
+                    class="process-img w-full h-full object-cover grayscale opacity-90"
+                    alt="Process Step 3"
+                  />
+                </div>
+
+                <!-- Large Sticky Number -->
+                <div class="absolute -right-4 top-8 z-20">
+                  <span
+                    id="process-number"
+                    class="font-instrument-serif text-7xl lg:text-8xl text-zinc-900/90 ext-zinc-100/90 tracking-tight transition-all duration-500"
+                    >03</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Scrolling Text -->
+          <div
+            class="md:px-12 md:py-32 flex flex-col lg:gap-64 pt-24 pr-6 pb-24 pl-6 relative gap-x-32 gap-y-32"
+          >
+            <!-- Mobile Header -->
+            <div class="lg:hidden mb-8">
+              <div
+                class="inline-flex items-center gap-2 text-xs font-semibold text-zinc-600 ext-zinc-400 border border-zinc-200 order-zinc-800 bg-zinc-100/80 g-zinc-900/80 backdrop-blur-sm rounded-full px-3 py-1 mb-6 tracking-wider uppercase"
+              >
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                Admission
+              </div>
+              <h2
+                class="text-4xl md:text-5xl font-instrument-serif text-zinc-900 ext-white tracking-tight"
+              >
+                How it works
+              </h2>
+            </div>
+
+            <!-- Step 1 -->
+            <div
+              class="process-step group flex flex-col justify-center min-h-[40vh]"
+              data-step="1"
+            >
+              <span
+                class="lg:hidden text-6xl font-instrument-serif text-zinc-300 ext-zinc-700 mb-6 block"
+                >01</span
+              >
+              <h3
+                class="text-4xl md:text-5xl lg:text-6xl font-instrument-serif text-zinc-900 ext-zinc-100 tracking-tight mb-8 group-hover:text-zinc-700 roup-hover:text-white transition-colors"
+              >
+                Inquire &amp; Apply For Admission
+              </h3>
+              <p
+                class="text-lg md:text-xl text-zinc-600 ext-zinc-400 font-light leading-relaxed max-w-lg mb-10"
+              >
+                Contact us to start your registration. Our admission process is
+                designed to welcome all who are hungry for God's word and ready
+                to serve.
+              </p>
+              <a
+                href="#contact"
+                class="text-sm uppercase tracking-widest font-medium text-zinc-900 ext-white border-b border-zinc-300 order-zinc-600 pb-1 w-fit hover:border-emerald-500 over:border-white hover:text-emerald-500 over:text-emerald-400 transition-all"
+              >
+                Contact us
+              </a>
+            </div>
+
+            <!-- Step 2 -->
+            <div
+              class="process-step group flex flex-col justify-center min-h-[40vh]"
+              data-step="2"
+            >
+              <span
+                class="lg:hidden text-6xl font-instrument-serif text-zinc-300 ext-zinc-700 mb-6 block"
+                >02</span
+              >
+              <h3
+                class="text-4xl md:text-5xl lg:text-6xl font-instrument-serif text-zinc-900 ext-zinc-100 tracking-tight mb-8 group-hover:text-zinc-700 roup-hover:text-white transition-colors"
+              >
+                Biblical Training &amp; Mentorship
+              </h3>
+              <p
+                class="text-lg md:text-xl text-zinc-600 ext-zinc-400 font-light leading-relaxed max-w-lg mb-10"
+              >
+                Attend lectures at our Ibadan campus. Immerse yourself in a
+                community of faith where academic excellence meets spiritual
+                fire.
+              </p>
+              <a
+                href="#contact"
+                class="text-sm uppercase tracking-widest font-medium text-zinc-900 ext-white border-b border-zinc-300 order-zinc-600 pb-1 w-fit hover:border-emerald-500 over:border-white hover:text-emerald-500 over:text-emerald-400 transition-all"
+              >
+                View curriculum
+              </a>
+            </div>
+
+            <!-- Step 3 -->
+            <div
+              class="process-step group flex flex-col justify-center min-h-[40vh]"
+              data-step="3"
+            >
+              <span
+                class="lg:hidden text-6xl font-instrument-serif text-zinc-300 ext-zinc-700 mb-6 block"
+                >03</span
+              >
+              <h3
+                class="text-4xl md:text-5xl lg:text-6xl font-instrument-serif text-zinc-900 ext-zinc-100 tracking-tight mb-8 group-hover:text-zinc-700 roup-hover:text-white transition-colors"
+              >
+                Graduation &amp; Commissioning
+              </h3>
+              <p
+                class="text-lg md:text-xl text-zinc-600 ext-zinc-400 font-light leading-relaxed max-w-lg mb-10"
+              >
+                Complete your training and go forth equipped. We send you out
+                with the blessing and tools needed for the harvest field.
+              </p>
+              <a
+                href="#contact"
+                class="text-sm uppercase tracking-widest font-medium text-zinc-900 ext-white border-b border-zinc-300 order-zinc-600 pb-1 w-fit hover:border-emerald-500 over:border-white hover:text-emerald-500 over:text-emerald-400 transition-all"
+              >
+                Join today
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits (Bento Grid) -->
+    <section
+      class="py-24 px-6 md:px-12 bg-white g-zinc-950 border-b border-zinc-200 order-zinc-900/50"
+      id="benefits"
+    >
+      <div class="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-12">
+        <div class="mb-20 max-w-2xl">
+          <h2
+            class="text-5xl md:text-7xl font-medium text-zinc-900 ext-white tracking-tight font-instrument-serif mb-6"
+          >
+            Spiritual destiny, <span class="text-zinc-600">fulfilled.</span>
+          </h2>
+          <p
+            class="text-xl text-zinc-600 ext-zinc-400 font-light leading-relaxed"
+          >
+            Discover your purpose and walk in the fullness of your calling. We
+            help you grow smarter so you can focus on ministry.
+          </p>
+        </div>
+
+        <div>
+          <img
+            src="./assets/images/16.jpg"
+            class="grayscale-[.5]"
+            alt=""
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section
+      class="py-24 px-6 md:px-12 bg-zinc-50 g-zinc-950"
+      id="gallery"
+    >
+      <div class="max-w-[1400px] mx-auto">
+        <!-- Section Header -->
+        <div class="mb-16">
+          <h2
+            class="text-4xl md:text-5xl font-instrument-serif text-zinc-900 ext-white tracking-tight flex items-center gap-4"
+          >
+            GALLERY
+          </h2>
+        </div>
+
+        <!-- Masonry Grid -->
+        <div class="columns-1 md:columns-2 lg:columns-3 gap-3 space-y-3">
+          <!-- Item 1 -->
+          <div
+            class="break-inside-avoid relative group overflow-hidden cursor-pointer"
+          >
+            <img
+              src="./assets/images/10.jpg"
+              class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+              alt="Lectures"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+            ></div>
+            <div
+              class="absolute bottom-0 left-0 p-6 transform translate-y-0 group-hover:-translate-y-4 transition-transform duration-500"
+            >
+              <h3 class="text-white uppercase text-xl tracking-wide">
+                Lectures
+              </h3>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div
+            class="break-inside-avoid relative group overflow-hidden cursor-pointer"
+          >
+            <img
+              src="./assets/images/11.jpg"
+              class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+              alt="Plethora of books"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+            ></div>
+            <div
+              class="absolute bottom-0 left-0 p-6 transform translate-y-0 group-hover:-translate-y-4 transition-transform duration-500"
+            >
+              <h3 class="text-white uppercase text-xl tracking-wide">
+                Plethora of books
+              </h3>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div
+            class="break-inside-avoid relative group overflow-hidden cursor-pointer"
+          >
+            <img
+              src="./assets/images/12.jpg"
+              class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+              alt="Missions Workshops"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+            ></div>
+            <div
+              class="absolute bottom-0 left-0 p-6 transform translate-y-0 group-hover:-translate-y-4 transition-transform duration-500"
+            >
+              <h3 class="text-white uppercase text-xl tracking-wide">
+                Missions Workshops
+              </h3>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div
+            class="break-inside-avoid relative group overflow-hidden cursor-pointer"
+          >
+            <img
+              src="./assets/images/14.jpg"
+              class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+              Practical alt="Field Trips"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+            ></div>
+            <div
+              class="absolute bottom-0 left-0 p-6 transform translate-y-0 group-hover:-translate-y-4 transition-transform duration-500"
+            >
+              <h3 class="text-white uppercase text-xl tracking-wide">
+                Practical Field Trips
+              </h3>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div
+            class="break-inside-avoid relative group overflow-hidden cursor-pointer"
+          >
+            <img
+              src="./assets/images/15.jpg"
+              class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+              alt="Impartation"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+            ></div>
+            <div
+              class="absolute bottom-0 left-0 p-6 transform translate-y-0 group-hover:-translate-y-4 transition-transform duration-500"
+            >
+              <h3 class="text-white uppercase text-xl tracking-wide">
+                Impartation
+              </h3>
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div
+            class="break-inside-avoid relative group overflow-hidden cursor-pointer"
+          >
+            <img
+              src="./assets/images/16.jpg"
+              class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+              alt="Graduation Ceremony 2005"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+            ></div>
+            <div
+              class="absolute bottom-0 left-0 p-6 transform translate-y-0 group-hover:-translate-y-4 transition-transform duration-500"
+            >
+              <h3 class="text-white uppercase text-xl tracking-wide">
+                Graduation Ceremony 2005
+              </h3>
+            </div>
+          </div>
+
+          <!-- Item 7 -->
+          <div
+            class="break-inside-avoid relative group overflow-hidden cursor-pointer"
+          >
+            <img
+              src="./assets/images/4.jpg"
+              class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+              alt="UKWW 2022"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+            ></div>
+            <div
+              class="absolute bottom-0 left-0 p-6 transform translate-y-0 group-hover:-translate-y-4 transition-transform duration-500"
+            >
+              <h3 class="text-white uppercase text-xl tracking-wide">
+                UKWW 2022
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Information -->
+    <div
+      class="border-t border-zinc-200 order-zinc-900 bg-white g-zinc-950 pt-12 pb-6"
+      id="contact"
+    >
+      <div
+        class="max-w-[1800px] mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6 mb-12"
+      >
+        <!-- Dynamic Info -->
+        <div class="flex flex-col md:flex-row items-center gap-4">
+          <div
+            class="flex flex-col md:flex-row items-center gap-2 px-4 py-2 text-zinc-400 text-sm"
+          >
+            <span class="text-zinc-700">+234 802 365 7422</span>
+            <span class="text-zinc-700 hidden md:block">|</span>
+            <a
+              href="mailto:fullstaturemissionscollege@yahoo.com"
+              class="transition-colors text-zinc-700 underline"
+              >fullstaturemissionscollege@yahoo.com</a
+            >
+          </div>
+          <div class="text-sm text-zinc-500 uppercase text-center md:text-left">
+            8b, Koyejo Street, Oke-Bola, Ibadan, Oyo State, Nigeria.
+          </div>
+        </div>
+
+        <!-- Socials -->
+        <div
+          class="flex gap-8 text-sm font-medium uppercase tracking-wide text-zinc-600 ext-zinc-500"
+        >
+          <a
+            href="#"
+            class="hover:text-black over:text-white transition-colors"
+            >Facebook</a
+          >
+          <a
+            href="#"
+            class="hover:text-black over:text-white transition-colors"
+            >WhatsApp</a
+          >
+          <a
+            href="#"
+            class="hover:text-black over:text-white transition-colors"
+            >Instagram</a
+          >
+        </div>
+      </div>
+
+      <!-- Marquee Text Footer -->
+      <div
+        class="relative w-full overflow-hidden select-none opacity-40 hover:opacity-100 transition-opacity duration-500"
+      >
+        <div class="marquee-container-text">
+          <div class="flex items-center whitespace-nowrap">
+            <span
+              class="text-[12vw] leading-none font-instrument-serif italic text-zinc-800 px-8"
+              >FCBM - Fullstature College of the Bible and Missions - IBADAN
+              ©</span
+            >
+            <span
+              class="text-[12vw] leading-none font-instrument-serif italic text-zinc-800 px-8"
+              >FCBM - Fullstature College of the Bible and Missions - IBADAN
+              ©</span
+            >
+          </div>
+          <div class="flex items-center whitespace-nowrap" aria-hidden="true">
+            <span
+              class="text-[12vw] leading-none font-instrument-serif italic text-zinc-800 px-8"
+              >FCBM - Fullstature College of the Bible and Missions - IBADAN
+              ©</span
+            >
+            <span
+              class="text-[12vw] leading-none font-instrument-serif italic text-zinc-800 px-8"
+              >FCBM - Fullstature College of the Bible and Missions - IBADAN
+              ©</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripting -->
+    <script>
+      // Dark Mode Toggle
+      const toggleBtn = document.getElementById("theme-toggle");
+      const html = document.documentElement;
+
+      // Check localStorage for saved theme preference, default to dark
+      const currentTheme = localStorage.getItem("theme") || "dark";
+
+      // Apply the saved theme
+      if (currentTheme === "dark") {
+        html.classList.add("dark");
+      } else {
+        html.classList.remove("dark");
+      }
+
+      // Toggle theme on button click
+      toggleBtn.addEventListener("click", () => {
+        html.classList.toggle("dark");
+
+        // Save preference to localStorage
+        const newTheme = html.classList.contains("dark") ? "dark" : "light";
+        localStorage.setItem("theme", newTheme);
+      });
+    </script>
+    <script src="assets/scripts/script.js"></script>
+  </body>
+</html>
