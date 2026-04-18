@@ -1,61 +1,224 @@
-html{
-  scroll-behavior: auto !important;
+/* ==========================================================
+   FCBM DESIGN SYSTEM — style.css
+   Fullstature College of the Bible and Missions
+   ========================================================== */
+
+/* ----------------------------------------------------------
+   1. CSS CUSTOM PROPERTIES (Design Tokens)
+   ---------------------------------------------------------- */
+:root {
+  /* Color Palette */
+  --color-bg:           #FAFAF8;   /* Warm Ivory — page background */
+  --color-surface:      #FFFFFF;   /* Pure White — cards, panels */
+  --color-ink:          #1A1A18;   /* Deep Charcoal — primary text */
+  --color-ink-soft:     #6B6B67;   /* Warm Stone — secondary text */
+  --color-border:       #E8E8E4;   /* Light Fog — borders, dividers */
+  --color-accent-gold:  #DCD516;   /* Sacred Gold — hero highlight */
+  --color-accent-red:   #8B1A1A;   /* Seminary Red — primary CTA */
+  --color-accent-red-hover: #701515;
+  --color-dark:         #0F0F0B;   /* Midnight Ink — dark sections */
+  --color-dark-surface: #1C1C1A;   /* Deep Slate — dark cards */
+
+  /* Typography */
+  --font-serif:   "Instrument Serif", Georgia, serif;
+  --font-sans:    "Inter", system-ui, sans-serif;
+
+  /* Spacing Scale (8pt grid) */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  --space-32: 128px;
+  --space-48: 192px;
+
+  /* Transitions */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-expo:  cubic-bezier(0.7, 0, 0.84, 0);
 }
+
+/* ----------------------------------------------------------
+   2. BASE RESET & DEFAULTS
+   ---------------------------------------------------------- */
+html {
+  scroll-behavior: auto !important; /* Lenis handles smooth scroll */
+}
+
 body {
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* ----------------------------------------------------------
+   3. TYPOGRAPHY UTILITIES
+   ---------------------------------------------------------- */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
 .font-instrument-serif {
-  font-family: "Instrument Serif", serif;
+  font-family: var(--font-serif);
 }
-/* Custom smooth scrolling and hidden scrollbar */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
+
+/* Label / tag style — small caps, tracked */
+.label-tag {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
 }
+
+/* ----------------------------------------------------------
+   4. SCROLLBAR UTILITIES
+   ---------------------------------------------------------- */
+.no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-/* Animation Utilities */
-.fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
-  opacity: 0;
-  transform: translateY(20px);
-}
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/* Marquee Animation */
-@keyframes marquee-scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-.marquee-container-text {
-  display: flex;
-  width: max-content;
-  animation: marquee-scroll 150s linear infinite;
-}
-/* Cursor styles */
-.cursor-grab {
-  cursor: grab;
-}
-.cursor-grabbing {
-  cursor: grabbing;
-}
-/* Glass utilities */
+
+/* ----------------------------------------------------------
+   5. CURSOR STYLES
+   ---------------------------------------------------------- */
+.cursor-grab    { cursor: grab; }
+.cursor-grabbing { cursor: grabbing; }
+
+/* ----------------------------------------------------------
+   6. GLASS PANEL UTILITY
+   ---------------------------------------------------------- */
 .glass-panel {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
-/* Image transition for the process section */
+
+/* ----------------------------------------------------------
+   7. BUTTON SYSTEM
+   ---------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 14px 28px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s var(--ease-out-expo);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: var(--color-accent-red);
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: var(--color-accent-red-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(139, 26, 26, 0.35);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.btn-ghost:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-outline-dark {
+  background-color: transparent;
+  color: var(--color-ink);
+  border: 1px solid var(--color-border);
+}
+.btn-outline-dark:hover {
+  background-color: var(--color-ink);
+  color: #fff;
+  border-color: var(--color-ink);
+}
+
+/* ----------------------------------------------------------
+   8. SECTION LAYOUT UTILITIES
+   ---------------------------------------------------------- */
+.section-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (min-width: 768px) {
+  .section-container { padding: 0 48px; }
+}
+
+/* ----------------------------------------------------------
+   9. HERO ANIMATIONS
+   ---------------------------------------------------------- */
+.fade-in-up {
+  animation: fadeInUp 0.9s var(--ease-out-expo) forwards;
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.fade-in-up-delay-1 { animation-delay: 0.15s; }
+.fade-in-up-delay-2 { animation-delay: 0.30s; }
+.fade-in-up-delay-3 { animation-delay: 0.45s; }
+
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Cinematic phrase swap */
+@keyframes cinematic-in {
+  0%   { opacity: 0; filter: blur(12px); transform: scale(1.15) translateY(10px); }
+  100% { opacity: 1; filter: blur(0px);  transform: scale(1)    translateY(0);    }
+}
+
+@keyframes cinematic-out {
+  0%   { opacity: 1; filter: blur(0px);  transform: scale(1)    translateY(0);    }
+  100% { opacity: 0; filter: blur(8px);  transform: scale(0.95) translateY(-5px); }
+}
+
+.animate-cinematic-in {
+  animation: cinematic-in 1.2s var(--ease-out-expo) forwards;
+}
+.animate-cinematic-out {
+  animation: cinematic-out 0.6s var(--ease-in-expo) forwards;
+}
+
+/* ----------------------------------------------------------
+   10. MARQUEE ANIMATION
+   ---------------------------------------------------------- */
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-container-text {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 180s linear infinite;
+}
+
+/* ----------------------------------------------------------
+   11. PROCESS / STICKY IMAGE SECTION
+   ---------------------------------------------------------- */
 .process-img {
   transition:
     opacity 0.5s ease-in-out,
@@ -73,46 +236,241 @@ body {
   left: 0;
 }
 
+/* ----------------------------------------------------------
+   12. ABOUT — SCROLL REVEAL TEXT
+   ---------------------------------------------------------- */
+.reveal-container .reveal-text {
+  transform: translateY(100%);
+  transition: transform 0.8s var(--ease-out-expo);
+}
+.reveal-container .reveal-text.is-visible {
+  transform: translateY(0);
+}
 
-/* Hero Changing Texts/Phrases */
-  /* The "In" Animation: 
-     Start: Transparent, blurred, slightly scaled up (1.1x), and slightly lower (translate-y).
-     End: Visible, sharp, normal scale, and original position.
-  */
-  @keyframes cinematic-in {
-    0% {
-      opacity: 0;
-      filter: blur(12px);
-      transform: scale(1.15) translateY(10px);
-    }
-    100% {
-      opacity: 1;
-      filter: blur(0px);
-      transform: scale(1) translateY(0);
-    }
+/* ----------------------------------------------------------
+   13. STAT COUNTER (Social Proof Bar)
+   ---------------------------------------------------------- */
+.stat-number {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* ----------------------------------------------------------
+   14. BENTO GRID (Programs)
+   ---------------------------------------------------------- */
+.bento-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto auto;
   }
 
-  /* The "Out" Animation:
-     Reverse the logic but faster. We scale down slightly to suggest recession.
-  */
-  @keyframes cinematic-out {
-    0% {
-      opacity: 1;
-      filter: blur(0px);
-      transform: scale(1) translateY(0);
-    }
-    100% {
-      opacity: 0;
-      filter: blur(8px);
-      transform: scale(0.95) translateY(-5px);
-    }
+  /* Row 1: Cards 01 and 02 — equal halves, taller */
+  .bento-card:nth-child(1),
+  .bento-card:nth-child(2) {
+    grid-column: span 1;
   }
 
-  /* Utility classes to apply the animations */
-  .animate-cinematic-in {
-    animation: cinematic-in 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  /* Row 2: Cards 03, 04, 05 handled by the 3-column grid auto-placement */
+
+  /* Row 3: Card 06 — full width banner */
+  .bento-card:nth-child(6) {
+    grid-column: span 2;
   }
-  
-  .animate-cinematic-out {
-    animation: cinematic-out 0.6s cubic-bezier(0.7, 0, 0.84, 0) forwards;
+}
+
+@media (min-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
+
+  .bento-card:nth-child(1) { grid-column: span 1; grid-row: 1; }
+  .bento-card:nth-child(2) { grid-column: span 1; grid-row: 1; }
+  /* Card 3 starts a new implicit row aligned with card 1 on wide */
+  .bento-card:nth-child(6) { grid-column: span 3; }
+}
+
+/* ----------------------------------------------------------
+   15. FAQ ACCORDION
+   ---------------------------------------------------------- */
+.faq-item {
+  border-bottom: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.faq-trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  gap: 16px;
+}
+
+.faq-trigger:hover .faq-question {
+  color: var(--color-accent-red);
+}
+
+.faq-question {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-ink);
+  transition: color 0.2s ease;
+}
+
+.faq-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s var(--ease-out-expo);
+  color: var(--color-ink-soft);
+}
+
+.faq-item.open .faq-icon {
+  background-color: var(--color-accent-red);
+  border-color: var(--color-accent-red);
+  color: #fff;
+  transform: rotate(45deg);
+}
+
+.faq-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s var(--ease-out-expo);
+}
+
+.faq-body-inner {
+  padding: 0 0 24px 0;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--color-ink-soft);
+  max-width: 720px;
+}
+
+.faq-item.open .faq-body {
+  max-height: 400px;
+}
+
+/* ----------------------------------------------------------
+   16. TESTIMONIAL CARDS
+   ---------------------------------------------------------- */
+.testimonial-card {
+  background-color: var(--color-dark-surface);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  transition: border-color 0.3s ease, transform 0.3s var(--ease-out-expo);
+}
+.testimonial-card:hover {
+  border-color: rgba(220, 213, 22, 0.3);
+  transform: translateY(-4px);
+}
+
+/* ----------------------------------------------------------
+   17. FORM STYLES
+   ---------------------------------------------------------- */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+  appearance: none;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--color-accent-red);
+  box-shadow: 0 0 0 3px rgba(139, 26, 26, 0.1);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #AEAEAA;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ----------------------------------------------------------
+   18. GRAIN TEXTURE OVERLAY (for dark sections)
+   ---------------------------------------------------------- */
+.grain-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  opacity: 0.025;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  z-index: 0;
+}
+
+/* ----------------------------------------------------------
+   19. SCROLL ANIMATION HELPERS (GSAP targets)
+   ---------------------------------------------------------- */
+.gsap-fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.gsap-fade-in {
+  opacity: 0;
+}
+
+.gsap-slide-right {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+/* ----------------------------------------------------------
+   20. DIVIDER UTILITY
+   ---------------------------------------------------------- */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-border);
+}
